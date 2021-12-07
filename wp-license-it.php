@@ -1,11 +1,11 @@
 <?php
 /*
     Plugin Name: WP License It
-    Plugin URI: https://devlloplugins.com/
+    Plugin URI: https://femiyb.com/
     Description: Plugin and Theme Licensing plugin
     Author: Devllo
     Version: 0.1
-    Author URI: https://devllo.com/
+    Author URI: https://femiyb.com/
     Text Domain: wp-license-it
     Domain Path: /languages
 */
@@ -44,6 +44,10 @@ class WP_License_It {
         include( 'includes/wp-license-it-activator.php');
         include( 'includes/wp-license-it-api.php'); 
 
+        include( 'includes/pages/wplit-render-product.php'); 
+        include( 'includes/pages/view-licenses.php'); 
+        include( 'includes/pages/payment-checkout.php'); 
+
     }
 
 
@@ -52,6 +56,16 @@ class WP_License_It {
     }
 
     public function define_constants(){
+        define( 'WPLIT_URI', plugin_dir_url( __FILE__ ) );
+        define( 'WPLIT_DIR', dirname(__FILE__) );
+
+        define( 'WPLIT_ADMIN_URI', WPLIT_URI . 'admin/' );
+        define( 'WPLIT_INCLUDES_URI', WPLIT_URI . 'includes/' );
+
+
+        define( 'WPLIT_ADMIN_DIR', WPLIT_DIR . '/admin' );
+        define( 'WPLIT_INCLUDES_DIR', WPLIT_DIR . '/includes' );
+
 
     }
 

@@ -8,7 +8,7 @@ class WP_License_It_Activator {
 		add_action( 'admin_init', array( $this, 'activate' ) );
 	}
 
-    protected static $wplit_db_version = 1.7;
+    protected static $wplit_db_version = 1.9;
 
     public static function activate() {
         $current_wplit_db_version = get_option('wplit_db_version');
@@ -50,6 +50,7 @@ class WP_License_It_Activator {
 
         $sql = "CREATE TABLE " . $table_name . "("
                 . "id mediumint(9) NOT NULL auto_increment,"
+                . "user_id mediumint(9) NOT NULL,"
                 . "product_id mediumint(9) DEFAULT 0 NOT NULL,"
                 . "license_key varchar(48) NOT NULL, "
                 . "product_api_key varchar(48) NOT NULL, "

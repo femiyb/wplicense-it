@@ -201,7 +201,7 @@
                // 'last_updated' => $last_updated,
                // 'banner_low' => $banner_low,
                // 'banner_high' => $banner_high,
-                "package_url" => home_url( '/api/license-manager/v1/get?p=' . $product_id . '&k=' . $product_api_key . '&e=' . $email . '&l=' . urlencode( $license_key ) ),
+                "package_url" => home_url( '/api/license-manager/v1/get?p=' . $product_id . '&k=' . urlencode( $product_api_key ) . '&e=' . $email . '&l=' . urlencode( $license_key ) ),
                 // "description_url" => get_permalink( $product->ID ) . '#v=' . $version
             );
         }
