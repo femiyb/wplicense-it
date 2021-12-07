@@ -27,8 +27,6 @@
             add_action('parse_request', array($this, 'sniff_api_requests'));
 
             add_action('init', array($this, 'add_api_endpoint_rules'));
-
-
         }
 
         /**
@@ -87,7 +85,7 @@
          * The permalink structure definition for API calls.
          */
         public function add_api_endpoint_rules() {
-            add_rewrite_rule( 'api/license-manager/v1/(info|get)/?',
+            add_rewrite_rule( 'api/license-manager/v1/(info|get|status)/?',
                 'index.php?__wp_license_api=$matches[1]', 'top' );
 
             // If this was the first time, flush rules
@@ -132,11 +130,41 @@
             // Verify license
             if ( ! $this->verify_license( $product_post->ID, $email, $license_key, $product_api_key ) ) {
                 return $this->error_response( 'Invalid license or license expired.' );
-            }
+            } 
 
             // Call the handler function
             return call_user_func_array( $action_function, array( $product_post, $product_id, $email, $license_key, $product_api_key) );
         }
+
+        private function verify_license_status( $action_function, $params ) {
+            if ( ! isset( $params['p'] ) || ! isset( $params['e'] ) || ! isset( $params['l'] ) || ! isset( $params['k'] ) ) {
+                return $this->error_response( 'Invalid request' );
+            }
+
+            $product_id = $params['p'];
+            $email = $params['e'];
+            $license_key = $params['l'];
+            $product_api_key = $params['k'];
+
+
+            // Find product
+            $product_post = get_post($product_id,
+                array (
+                    'post_type' => 'wplit_product',
+                    'post_status' => 'publish',
+                )
+            );
+
+            // Verify license
+            if ( ! $this->verify_license( $product_post->ID, $email, $license_key, $product_api_key ) ) {
+                $status = 'inactive';
+            } elseif ( $this->verify_license( $product_post->ID, $email, $license_key, $product_api_key ) ) {
+                $status = 'active';
+            }
+
+            return $status;
+        }
+
 
         /**
          * Looks up a license that matches the given parameters.
@@ -211,24 +239,24 @@
          *
          * @param   $product    WP_Post     The product object
          */
-        private function get_product( $product, $product_id, $email, $license_key ) {
-            // Get the AWS data from post meta fields
-            $meta = get_post_meta( $product->ID, 'wp_license_manager_product_meta', true );
-            $bucket = isset ( $meta['file_bucket'] ) ? $meta['file_bucket'] : '';
-            $file_name = isset ( $meta['file_name'] ) ? $meta['file_name'] : '';
+        // private function get_product( $product, $product_id, $email, $license_key ) {
+        //     // Get the AWS data from post meta fields
+        //     $meta = get_post_meta( $product->ID, 'wp_license_manager_product_meta', true );
+        //     $bucket = isset ( $meta['file_bucket'] ) ? $meta['file_bucket'] : '';
+        //     $file_name = isset ( $meta['file_name'] ) ? $meta['file_name'] : '';
 
-            if ( $bucket == '' || $file_name == '' ) {
-                // No file set, return error
-                return $this->error_response( 'No download defined for product.' );
-            }
+        //     if ( $bucket == '' || $file_name == '' ) {
+        //         // No file set, return error
+        //         return $this->error_response( 'No download defined for product.' );
+        //     }
 
-            // Use the AWS API to set up the download
-            // This API method is called directly by WordPress so we need to adhere to its
-            // requirements and skip the JSON. WordPress expects to receive a ZIP file...
+        //     // Use the AWS API to set up the download
+        //     // This API method is called directly by WordPress so we need to adhere to its
+        //     // requirements and skip the JSON. WordPress expects to receive a ZIP file...
 
-            $s3_url = Wp_License_Manager_S3::get_s3_url( $bucket, $file_name );
-            wp_redirect( $s3_url, 302 );
-        }
+        //     $s3_url = Wp_License_Manager_S3::get_s3_url( $bucket, $file_name );
+        //     wp_redirect( $s3_url, 302 );
+        // }
 
 
             /**
@@ -246,6 +274,10 @@
 
                 case 'get':
                     $response = $this->verify_license_and_execute( array( $this, 'get_product_file_url' ), $params );
+                    break;
+
+                case 'status':
+                    $response = $this->verify_license_status( array( $this, 'product_info' ), $params );
                     break;
 
                 default:
