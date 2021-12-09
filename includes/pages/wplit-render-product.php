@@ -145,9 +145,11 @@ class WPLit_Render_Product {
 
                         // Redirect to Checkout page for paid products
 
-                        $url = home_url('/payment/');   
+                        $url = get_permalink(get_option('wplit-checkout-page'));   
 
+                        if($url){
                         wp_redirect( $url );
+                        }
 
                     } else {
                     // If event is free, go to add license function

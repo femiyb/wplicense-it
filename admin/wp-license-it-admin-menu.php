@@ -16,6 +16,12 @@ class WP_License_It_Admin_Menu {
     public function __construct() {
 		// admin menu
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+		include('wp-license-it-admin-sidebar.php');
+		// include('wp-license-it-admin-page.php');
+		include( 'wp-license-it-admin-settings.php');
+		include( 'wp-license-it-admin-dashboard.php');
+
+
 		
 	}
 
@@ -31,7 +37,10 @@ class WP_License_It_Admin_Menu {
 				call_user_func_array( 'add_submenu_page', $menu );
 			}
 		}
-        add_submenu_page( 'edit.php?post_type=wplit_product', __('Settings', ''), __('Settings', ''), 'manage_options', 'wplit-admin-settings', array( 'WP_License_It_Settings', 'wplit_settings_page'  )); 
+		add_submenu_page( 'edit.php?post_type=wplit_product', __('Dashboard', ''), __('Dashboard', ''), 'manage_options', 'wplit-admin-dashboard', array( 'WP_License_It_Admin_Dashboard', 'wplit_dashboard_page'  )); 
+        add_submenu_page( 'edit.php?post_type=wplit_product', __('Settings', ''), __('Settings', ''), 'manage_options', 'wplit-admin-settings', array( 'WP_License_It_Admin_Settings', 'wplit_settings_page'  )); 
+		// add_submenu_page( 'edit.php?post_type=wplit_product', __('Admin', ''), __('Admin', ''), 'manage_options', 'wplit-admin-page', array( 'WPLit_Admin_Page', 'devllo_events_settings_page'  )); 
+
 	}
 	
     /**

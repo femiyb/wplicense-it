@@ -38,7 +38,6 @@ class WP_License_It {
         include( 'admin/wp-license-it-product-admin.php');
         include( 'admin/wp-license-it-product-post.php'); 
         include( 'admin/wp-license-it-admin-menu.php'); 
-        include( 'admin/wp-license-it-settings.php');
 
         include( 'includes/wp-license-it-protect-file.php'); 
         include( 'includes/wp-license-it-activator.php');

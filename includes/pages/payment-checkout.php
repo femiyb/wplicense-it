@@ -3,10 +3,15 @@
 class WPLit_Payment_Function {
 
     public function __construct() {
-        add_action( 'wp_enqueue_scripts', array( $this, 'wplit_stripe_payment_js' ) );
         add_shortcode( 'wplit-checkout', array($this, 'wplit_stripe_payment_function') );
 
+        // Only load these scripts if cookie is set
+        if (isset($_COOKIE['wplit_product_id'] )){
+
         include( WPLIT_INCLUDES_DIR. '/payment/stripe-payment.php'); 
+        add_action( 'wp_enqueue_scripts', array( $this, 'wplit_stripe_payment_js' ) );
+
+        }
 
     }
 

@@ -189,8 +189,6 @@
             return false;
         }
 
-
-
          /**
          * The handler for the "info" request. Checks the user's license information and
          * returns information about the product (latest version, name, update url).
