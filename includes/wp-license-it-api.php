@@ -89,10 +89,10 @@
                 'index.php?__wp_license_api=$matches[1]', 'top' );
 
             // If this was the first time, flush rules
-           /* if ( get_option( 'wp-wp-license-it-api-rewrite-rules-version' ) != '1.3' ) {
+            if ( get_option( 'wp-license-it-api-rewrite-rules-version' ) != '0.9' ) {
                 flush_rewrite_rules();
-                update_option( 'wp-wp-license-it-api-rewrite-rules-version', '1.3' );
-            }  */
+                update_option( 'wp-license-it-api-rewrite-rules-version', '0.9' );
+            }  
         }
 
 

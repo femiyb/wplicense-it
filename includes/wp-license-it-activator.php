@@ -8,7 +8,7 @@ class WP_License_It_Activator {
 		// add_action( 'admin_init', array( $this, 'activate' ) );
 	}
 
-    protected static $wplit_db_version = 2.1;
+    protected static $wplit_db_version = 0.9;
 
     public static function activate() {
         $current_wplit_db_version = get_option('wplit_db_version');
@@ -31,7 +31,10 @@ class WP_License_It_Activator {
         }
         $wplit_protect_file = new WP_License_It_Protect_File();
 
-        $wplit_protect_file->blockHTTPAccess($upload_dir, $fileType = '*');
+        $wplit_protect_file->blockHTTPAccess($upload_dir, $fileType = 'zip');
+
+        flush_rewrite_rules(); 
+
     }
 
 
