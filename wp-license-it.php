@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Current plugin version.
  */
-define( 'WP_LICENSE_IT_VERSION', '0.9' );
+define( 'WP_LICENSE_IT_VERSION', '0.9.1' );
 
 class WP_License_It {
 

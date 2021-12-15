@@ -11,7 +11,7 @@ class WP_License_It_Protect_File {
      * @usgae Block http access to a dir
      * @param $upload_dir
      */
-    function blockHTTPAccess($upload_dir, $fileType = 'zip')
+    function blockHTTPAccess($upload_dir, $fileType = '.zip')
     {
         $cont = "RewriteEngine On\r\n<Files {$fileType}>\r\nDeny from all\r\n</Files>\r\n";
         @file_put_contents($upload_dir . '/.htaccess', $cont);

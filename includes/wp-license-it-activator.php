@@ -8,17 +8,17 @@ class WP_License_It_Activator {
 		// add_action( 'admin_init', array( $this, 'activate' ) );
 	}
 
-    protected static $wplit_db_version = 0.9;
 
     public static function activate() {
+        $wplit_db_version = 0.9;
         $current_wplit_db_version = get_option('wplit_db_version');
         if ( !$current_wplit_db_version ) {
             $current_wplit_db_version = 0;
         }
 
-        if (intval($current_wplit_db_version) < WP_License_It_Activator::$wplit_db_version) {
+        if (intval($current_wplit_db_version) < $wplit_db_version) {
             if(WP_License_It_Activator::create_upgrade_db()) {
-                update_option('wplit_db_version', WP_License_It_Activator::$wplit_db_version);
+                update_option('wplit_db_version', $wplit_db_version);
             }
         }
 
