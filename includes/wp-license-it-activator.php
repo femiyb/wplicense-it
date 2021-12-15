@@ -40,6 +40,8 @@ class WP_License_It_Activator {
 
 
     private static function create_upgrade_db(){
+        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+
         global $wpdb;
 
         $table_name = $wpdb->prefix . 'wplit_product_licenses';
@@ -90,10 +92,8 @@ class WP_License_It_Activator {
                 . "UNIQUE KEY id (id)" . ")" . $charset_collate. ";";
 
 
-        require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-        dbDelta($sql);
-        dbDelta($ordertable);
-
+        maybe_create_table( $table_name, $sql );
+        maybe_create_table( $order_table_name, $ordertable );
 
         return true;
     }

@@ -4,7 +4,7 @@
     Plugin URI: https://femiyb.com/
     Description: Plugin and Theme Licensing plugin
     Author: Devllo
-    Version: 0.9.2
+    Version: 0.9.3
     Author URI: https://femiyb.com/
     Text Domain: wp-license-it
     Domain Path: /languages
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Current plugin version.
  */
-define( 'WP_LICENSE_IT_VERSION', '0.9.1' );
+define( 'WP_LICENSE_IT_VERSION', '0.9.3' );
 
 class WP_License_It {
 
