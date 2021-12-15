@@ -85,13 +85,13 @@
          * The permalink structure definition for API calls.
          */
         public function add_api_endpoint_rules() {
-            add_rewrite_rule( 'api/license-manager/v1/(info|get|status)/?',
+            add_rewrite_rule( 'api/wp-license-it-api/v1/(info|get|status)/?',
                 'index.php?__wp_license_api=$matches[1]', 'top' );
 
             // If this was the first time, flush rules
-           /* if ( get_option( 'wp-license-manager-rewrite-rules-version' ) != '1.3' ) {
+           /* if ( get_option( 'wp-wp-license-it-api-rewrite-rules-version' ) != '1.3' ) {
                 flush_rewrite_rules();
-                update_option( 'wp-license-manager-rewrite-rules-version', '1.3' );
+                update_option( 'wp-wp-license-it-api-rewrite-rules-version', '1.3' );
             }  */
         }
 
@@ -227,7 +227,7 @@
                // 'last_updated' => $last_updated,
                // 'banner_low' => $banner_low,
                // 'banner_high' => $banner_high,
-                "package_url" => home_url( '/api/license-manager/v1/get?p=' . $product_id . '&k=' . urlencode( $product_api_key ) . '&e=' . $email . '&l=' . urlencode( $license_key ) ),
+                "package_url" => home_url( '/api/wp-license-it-api/v1/get?p=' . $product_id . '&k=' . urlencode( $product_api_key ) . '&e=' . $email . '&l=' . urlencode( $license_key ) ),
                 // "description_url" => get_permalink( $product->ID ) . '#v=' . $version
             );
         }
