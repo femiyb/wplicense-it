@@ -5,10 +5,10 @@ class WP_License_It_Activator {
     public function __construct(){
 		//add_action( 'init', array( $this, 'pluginprefix_setup_post_type' ));
 
-		add_action( 'admin_init', array( $this, 'activate' ) );
+		// add_action( 'admin_init', array( $this, 'activate' ) );
 	}
 
-    protected static $wplit_db_version = 1.9;
+    protected static $wplit_db_version = 2.1;
 
     public static function activate() {
         $current_wplit_db_version = get_option('wplit_db_version');
@@ -39,6 +39,8 @@ class WP_License_It_Activator {
         global $wpdb;
 
         $table_name = $wpdb->prefix . 'wplit_product_licenses';
+        $order_table_name = $wpdb->prefix . 'wplit_orders';
+
 
         $charset_collate = '';
         if (!empty($wpdb->charset)){
@@ -60,8 +62,34 @@ class WP_License_It_Activator {
                 . "updated_at datetime DEFAULT '0000-00-00 00:00:00' NOT NULL, "
                 . "UNIQUE KEY id (id)" . ")" . $charset_collate. ";";
 
+        $ordertable = "CREATE TABLE " . $order_table_name . "("
+                . "id mediumint(9) NOT NULL auto_increment,"
+                . "user_id mediumint(9) NOT NULL,"
+                . "product_id mediumint(9) DEFAULT 0 NOT NULL,"
+                . "order_number varchar(48) NOT NULL, "
+                . "order_sub_total varchar(16) NOT NULL, "
+                . "order_total varchar(16) NOT NULL, "
+                . "order_email varchar(100) NOT NULL, "
+                . "first_name varchar(50) NOT NULL, "
+                . "last_name varchar(50) NOT NULL, "
+                . "billing_company varchar(50) NOT NULL, "
+                . "billing_address varchar(255) NOT NULL, "
+                . "billing_state varchar(50) NOT NULL, "
+                . "billing_city varchar(50) NOT NULL, "
+                . "billing_country varchar(50) NOT NULL, "
+                . "billing_phone varchar(32) NOT NULL, "
+                . "postal_code varchar(16) NOT NULL,"
+                . "order_status varchar(16) NOT NULL, "
+                . "discount_code varchar(16) NOT NULL, "
+                . "created_at datetime DEFAULT '0000-00-00 00:00:00' NOT NULL, "
+                . "updated_at datetime DEFAULT '0000-00-00 00:00:00' NOT NULL, "
+                . "UNIQUE KEY id (id)" . ")" . $charset_collate. ";";
+
+
         require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
         dbDelta($sql);
+        dbDelta($ordertable);
+
 
         return true;
     }

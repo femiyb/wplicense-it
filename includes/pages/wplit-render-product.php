@@ -105,7 +105,7 @@ class WPLit_Render_Product {
 
     }
     /**
-    * Handler for the add_license action (submitting
+    * Handler for the wplit_add_license action (submitting
     * the "Add New License" form). 
     */
     public function handle_add_license() {
@@ -154,7 +154,7 @@ class WPLit_Render_Product {
                     } else {
                     // If event is free, go to add license function
                     $WPLit_Add_License = new WPLit_Add_License;
-                    $WPLit_Add_License->add_license();
+                    $WPLit_Add_License->wplit_add_license();
                     }     
                 }
             }
