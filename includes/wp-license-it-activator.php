@@ -11,6 +11,7 @@ class WP_License_It_Activator {
 
     public static function activate() {
         $wplit_db_version = 0.9;
+
         $current_wplit_db_version = get_option('wplit_db_version');
         if ( !$current_wplit_db_version ) {
             $current_wplit_db_version = 0;
@@ -18,7 +19,7 @@ class WP_License_It_Activator {
 
         if (intval($current_wplit_db_version) < $wplit_db_version) {
             if(WP_License_It_Activator::create_upgrade_db()) {
-                update_option('wplit_db_version', $wplit_db_version);
+                update_option('wplit_db_version', $wplit_db_version, true);
             }
         }
 
@@ -31,7 +32,7 @@ class WP_License_It_Activator {
         }
         $wplit_protect_file = new WP_License_It_Protect_File();
 
-        $wplit_protect_file->blockHTTPAccess($upload_dir, $fileType = 'zip');
+        $wplit_protect_file->blockHTTPAccess($upload_dir, $fileType = '".zip"');
 
         flush_rewrite_rules(); 
 
