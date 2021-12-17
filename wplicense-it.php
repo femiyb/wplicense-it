@@ -1,12 +1,12 @@
 <?php
 /*
-    Plugin Name: WP License It
-    Plugin URI: https://femiyb.com/
+    Plugin Name: WPLicense It
+    Plugin URI: https://wplicenseit.com/
     Description: Plugin and Theme Licensing plugin
-    Author: Devllo
+    Author: Devllo Plugins
     Version: 0.9.3
-    Author URI: https://femiyb.com/
-    Text Domain: wp-license-it
+    Author URI: http://devlloplugins.com/
+    Text Domain: wplicense-it
     Domain Path: /languages
 */
 

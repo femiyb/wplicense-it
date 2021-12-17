@@ -89,7 +89,7 @@ class WP_License_It_Admin_Settings {
 			<main class="content">
 				<div class="container-fluid p-0">
 
-					<h1 class="h3 mb-3"><?php _e('Settings', 'devllo-events'); ?></h1>
+					<h1 class="h3 mb-3"><?php _e('Settings', 'wp-license-it'); ?></h1>
 
 					<div class="row">
 						<div class="col-md-3 col-xl-3">
@@ -101,13 +101,13 @@ class WP_License_It_Admin_Settings {
 
 								<div class="list-group list-group-flush" role="tablist">
                                 <a class="list-group-item list-group-item-action <?php echo $active_tab == 'wplit_settings' ? 'nav-tab-active' : ''; ?>" data-bs-toggle="list" href="?page=wplit-admin-settings&tab=wplit_settings&post_type=wplit_product" role="tab">
-									<?php _e('General', 'devllo-events'); ?></a>
+									<?php _e('General', 'wp-license-it'); ?></a>
 
                                     <a class="list-group-item list-group-item-action <?php echo $active_tab == 'wplit_settings_pages' ? 'nav-tab-active' : ''; ?>" data-bs-toggle="list" href="?page=wplit-admin-settings&tab=wplit_settings_pages&post_type=wplit_product" role="tab">
-									<?php _e('Pages', 'devllo-events'); ?></a>
+									<?php _e('Pages', 'wp-license-it'); ?></a>
 
                                     <a class="list-group-item list-group-item-action <?php echo $active_tab == 'wplit_settings_payment' ? 'nav-tab-active' : ''; ?>" data-bs-toggle="list" href="?page=wplit-admin-settings&tab=wplit_settings_payment&post_type=wplit_product" role="tab">
-									<?php _e('Payment', 'devllo-events'); ?></a>
+									<?php _e('Payment', 'wp-license-it'); ?></a>
 
 								</div>
 							</div>
@@ -151,9 +151,9 @@ class WP_License_It_Admin_Settings {
 				return ( $loop_posts->have_posts() ? $loop_posts->posts[0] : false );
 			} ?>
 			<tr>
-			<th style="text-align: left;"><?php _e('Checkout Page', 'devllo-events'); ?></th>
+			<th style="text-align: left;"><?php _e('Checkout Page', 'wp-license-it'); ?></th>
 			<td>
-			<em><?php _e('This page should include the shortcode', 'devllo-events');?> [wplit-checkout]<br/></em>
+			<em><?php _e('This page should include the shortcode', 'wp-license-it');?> [wplit-checkout]<br/></em>
 			<?php   
 			wp_dropdown_pages( array( 
 				'name' => 'wplit-checkout-page', 
@@ -163,13 +163,13 @@ class WP_License_It_Admin_Settings {
 				));
 			?>
 			</td>
-			<td><a target="_blank" href="<?php echo esc_url( get_permalink(get_option('wplit-checkout-page')) ); ?>" class="button button-secondary"><?php _e('View Page', 'devllo-events'); ?></a></td>
+			<td><a target="_blank" href="<?php echo esc_url( get_permalink(get_option('wplit-checkout-page')) ); ?>" class="button button-secondary"><?php _e('View Page', 'wp-license-it'); ?></a></td>
 			</tr>
 
 			<tr>
-			<th style="text-align: left;"><?php _e('License Page', 'devllo-events'); ?></th>
+			<th style="text-align: left;"><?php _e('License Page', 'wp-license-it'); ?></th>
 			<td>
-			<em><?php _e('This page should include the shortcode', 'devllo-events');?> [wplit-licenses]<br/></em>
+			<em><?php _e('This page should include the shortcode', 'wp-license-it');?> [wplit-licenses]<br/></em>
 			<?php   
 			wp_dropdown_pages( array( 
 				'name' => 'wplit-licenses-page', 
@@ -179,7 +179,7 @@ class WP_License_It_Admin_Settings {
 				));
 			?>
 			</td>
-			<td><a target="_blank" href="<?php echo esc_url( get_permalink(get_option('wplit-licenses-page')) ); ?>" class="button button-secondary"><?php _e('View Page', 'devllo-events'); ?></a></td>
+			<td><a target="_blank" href="<?php echo esc_url( get_permalink(get_option('wplit-licenses-page')) ); ?>" class="button button-secondary"><?php _e('View Page', 'wp-license-it'); ?></a></td>
 			</tr>
 
 			</table>
@@ -299,10 +299,10 @@ class WP_License_It_Admin_Settings {
 						<div class="col-6 text-end">
 							<ul class="list-inline">
 								<li class="list-inline-item">
-									<a class="text-muted" href="https://devlloplugins.com/support/">Support</a>
+									<a class="text-muted" href="https://devlloplugins.com/support/"><?php esc_html_e('Support', 'wp-license-it'); ?></a>
 								</li>
 								<li class="list-inline-item">
-									<a class="text-muted" href="https://devlloplugins.com/documentations/events-by-devllo-documentation/">Help Center</a>
+									<a class="text-muted" href="https://devlloplugins.com/documentations/events-by-devllo-documentation/"><?php esc_html_e('Help Center', 'wp-license-it'); ?></a>
 								</li>
                                 <!--
 								<li class="list-inline-item">

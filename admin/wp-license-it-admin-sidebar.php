@@ -29,8 +29,7 @@ function wplit_admin_sidebar (){
             </a>
 
 				<ul class="sidebar-nav">
-					<li class="sidebar-item <?php if ( isset( $my_current_screen->base ) && 'devllo_event_page_devllo-events-dashboard' === $my_current_screen->base ) {
- echo 'active'; }?>">
+					<li class="sidebar-item">
 						<a class="sidebar-link" href="edit.php?post_type=wplit_product&page=wplit-admin-dashboard">
               <i class="align-middle" data-feather="sliders"></i> <span class="align-middle"><?php _e('Dashboard', 'wp-liocense-it'); ?></span>
             </a>
@@ -42,15 +41,13 @@ function wplit_admin_sidebar (){
             </a>
 					</li> -->
 
-					<li class="sidebar-item <?php if ( isset( $my_current_screen->base ) && 'devllo_event_page_devllo-events-settings' === $my_current_screen->base ) {
- echo 'active'; }?>">
+					<li class="sidebar-item">
 						<a class="sidebar-link" href="edit.php?post_type=wplit_product&page=wplit-admin-settings">
               <i class="align-middle" data-feather="settings"></i> <span class="align-middle"><?php _e('Settings', 'wp-license-it'); ?></span>
             </a>
 					</li>
 
-					<li class="sidebar-header <?php if ( isset( $my_current_screen->base ) && 'devllo_event_page_devllo-events-addons' === $my_current_screen->base ) {
- echo 'active'; }?>">                        Add-Ons
+					<li class="sidebar-header"><?php esc_html_e('Add-Ons', 'wp-license-it'); ?>
 					</li>
 
 					<li class="sidebar-item">
@@ -68,12 +65,12 @@ function wplit_admin_sidebar (){
 
 				<div class="sidebar-cta">
 					<div class="sidebar-cta-content">
-						<strong class="d-inline-block mb-2">Premium Support</strong>
+						<strong class="d-inline-block mb-2"><?php esc_html_e('Premium Support', 'wp-license-it'); ?></strong>
 						<div class="mb-3 text-sm">
-							Need help? Subscribe for Premium Support here.
+							<?php esc_html_e('Need help? Subscribe for Premium Support here.', 'wp-license-it'); ?>
 						</div>
 						<div class="d-grid">
-							<a href="https://wplicenseit.com/support/" target="_blank" class="btn btn-primary">Get Support</a>
+							<a href="https://wplicenseit.com/support/" target="_blank" class="btn btn-primary"><?php esc_html_e('Get Support', 'wp-license-it'); ?></a>
 						</div>
 					</div>
 				</div>

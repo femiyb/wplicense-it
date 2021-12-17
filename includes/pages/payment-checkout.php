@@ -17,7 +17,7 @@ class WPLit_Payment_Function {
 
     function wplit_stripe_payment_js() { 
 
-        wp_enqueue_script( 'jquery',  'http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js');
+        // wp_enqueue_script( 'jquery',  'http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js');
 
         wp_enqueue_script( 'stripe',  'https://js.stripe.com/v3/');
         wp_enqueue_script( 'stripe-payment', WPLIT_INCLUDES_URI. 'payment/stripe-payment.js');	
@@ -143,7 +143,7 @@ class WPLit_Payment_Function {
 
         } else {
             ?>
-        <div class="error"> You have not selected any product to purchase. </div>
+        <div class="error"> <?php esc_html_e('You have not selected any product to purchase.', 'wp-license-it'); ?> </div>
          <?php
 
         }

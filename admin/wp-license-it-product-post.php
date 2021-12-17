@@ -6,7 +6,6 @@ class WP_License_It_Product_Post {
         add_action( 'init', array($this, 'wp_license_it_post_type'), 0);
         add_action( 'admin_init', array($this, 'add_wp_license_it_caps'));
 
-
     }
 
 		
@@ -55,13 +54,13 @@ class WP_License_It_Product_Post {
 			'label'                 => __( 'License Products', 'wp_license_it' ),
 			'description'           => __( 'WP License It Products', 'wp_license_it' ),
 			'labels'                => $labels,
-			'supports'              => array( 'title', 'page-attributes' ),
-			'rewrite'				=> array('slug' => 'products'),
+			'supports'           	=> array( 'title', 'editor', 'author', 'thumbnail' ),
+			'rewrite'				=> array('slug' => 'license'),
 			'hierarchical'          => true,
 			'public'                => true,
 			'show_ui'               => true,
 			'show_in_menu'          => true,
-			'menu_position'         => 5,
+			'menu_position'         => 20,
 			'menu_icon'             => 'dashicons-plugins-checked',
 			'show_in_admin_bar'     => true,
 			'show_in_nav_menus'     => true,

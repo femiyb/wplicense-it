@@ -34,46 +34,37 @@ class WPLit_Render_Product {
 
         $wplit_product_logo_url = get_post_meta( $args['id'], 'wplit_product_logo_url', true );
 
-        $wplit_product_price = get_post_meta( $args['id'], 'wplit_product_price', true );
+        $wplit_get_product_price = get_post_meta( $args['id'], 'wplit_product_price', true );
+
+        if ($wplit_get_product_price){
+            $wplit_product_price =  '<strong class="d-inline-block mb-2 text-success">Price: $' . $wplit_get_product_price . '</strong>';
+        } else {
+            $wplit_product_price = '';
+        }
 
         $product_id = $args['id'];
 
         if ($wplit_product_api_key){
     
-            $output = ' 
-            <div class="wplit_render_product_container" style="display: grid;">
-                <div style="width: 100%;">
-                    <div class="" style="width: 20%; float: left;">
-                        <div class="logo">
-                            <img src="' . $wplit_product_logo_url. '">
-                        </div>
+            $output = '
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col-auto d-none d-lg-block">
+                    <img style="width: 200px;" src="' . $wplit_product_logo_url. '">
                     </div>
-
-                    <div class="" style="width: 70%">
-                        <div class="desciption">'
-                            . $wplit_product_name .'<br/>' . $wplit_product_description .
-                        '</div>
-                    </div>
-                </div>
-
-
-                <div style="width: 100%;">
-                    <div class="" style=" float: left;">
-                        <div class="download">
-                            <form action="" method="POST">
+                
+                    <div class="col p-4 d-flex flex-column position-static">
+                    <h3 style="margin-bottom: 2px;" class="mb-0">'. esc_attr($wplit_product_name) .'</h3>
+                    ' . $wplit_product_price . '
+                    <div class="mb-1 text-muted">Version: ' .$wplit_product_version . '</div>
+                    <p style="margin-bottom: 26px;" class="mb-auto">' . esc_html($wplit_product_description ).'</p>
+                    <form action="" method="POST">
                             <input type="hidden" name="id" value="' . $product_id . '" />
+                    <input type="submit" name="add-license" class="button button-primary" value="' . $args['download_text'] . '" />
+                    </form>
 
-                            <input type="submit" name="add-license" class="button button-primary" value="' . $args['download_text'] . '" />
-                            </form>
-                        </div>
                     </div>
-
-                    <div class="" style="">
-                        <div class="info">
-                            Version: ' .$wplit_product_version . '
-                            <br/>Price: $ ' . $wplit_product_price . '
-                        </div>
-                    </div>
+                   
                 </div>
             </div>';
             do_action('wplit-notices');

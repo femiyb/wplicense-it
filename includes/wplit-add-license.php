@@ -27,15 +27,15 @@ class WPLit_Add_License {
         $order_email = (string) $current_user->user_email;
 
         if(isset($_POST['action']) && $_POST['action'] == 'stripe' && wp_verify_nonce($_POST['stripe_nonce'], 'stripe-nonce')) {
-            $first_name = $_POST['wplit_billing_user_first'] ;
-            $last_name = $_POST['wplit_billing_user_last'] ;
-            $billing_company = $_POST['wplit_billing_company'] ;
-            $billing_address = $_POST['wplit_billing_address'] ;
-            $billing_state = $_POST['wplit_billing_state'] ;
-            $billing_city = $_POST['wplit_billing_city'] ;
-            $billing_country = $_POST['wplit_billing_countryl'] ;
-            $postal_code = $_POST['wplit_billing_postal'] ;
-            $billing_phone = $_POST['wplit_billing_phone'] ;
+            $first_name = sanitize_text_field($_POST['wplit_billing_user_first']) ;
+            $last_name = sanitize_text_field($_POST['wplit_billing_user_last']) ;
+            $billing_company = sanitize_text_field($_POST['wplit_billing_company']) ;
+            $billing_address = sanitize_text_field($_POST['wplit_billing_address']) ;
+            $billing_state = sanitize_text_field($_POST['wplit_billing_state']) ;
+            $billing_city = sanitize_text_field($_POST['wplit_billing_city']) ;
+            $billing_country = sanitize_text_field($_POST['wplit_billing_countryl']) ;
+            $postal_code = sanitize_text_field($_POST['wplit_billing_postal']) ;
+            $billing_phone = sanitize_text_field($_POST['wplit_billing_phone']) ;
             $discount_code = '';
             $order_status = '';
         }

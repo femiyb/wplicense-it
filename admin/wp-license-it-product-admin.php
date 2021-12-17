@@ -40,8 +40,25 @@ class WP_License_It_Product_Admin {
             'side',
             'low'
         );
+
+        add_meta_box(
+            'wp_license_it_product_shortcode',
+            __( 'License Shortcode', 'wp-license-it' ),
+            array( $this, 'wplit_render_license_shortcode' ),
+            'wplit_product',
+            'side',
+            'low'
+        );
         
     }
+
+    public function wplit_render_license_shortcode( $post, $args ) {
+        wp_nonce_field( 'wplit_inner_custom_box', 'wplit_inner_custom_box_nonce' );
+        echo "[wplit-product id='". $post->ID . "' download_text='Buy License']";
+
+
+    }
+
 
     public function wplit_render_details_metabox( $post, $args ) {
 
@@ -51,11 +68,6 @@ class WP_License_It_Product_Admin {
         $wplit_expire_time = get_post_meta( $post->ID, 'wplit_expire_time', true );
 
         $wplit_product_price = get_post_meta( $post->ID, 'wplit_product_price', true );
-
-        print_r($wplit_expire);
-        print_r($wplit_expire_time);
-
-        
 
         ?>
         <div>
