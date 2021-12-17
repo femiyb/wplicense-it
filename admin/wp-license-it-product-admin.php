@@ -25,7 +25,7 @@ class WP_License_It_Product_Admin {
 
         add_meta_box(
             'wp_license_it_product_info',
-            __( 'Product License Information', 'wp-license-it' ),
+            __( 'Product License Information', 'wplicense-it' ),
             array( $this, 'wplit_render_metabox' ),
             'wplit_product',
             'advanced',
@@ -34,7 +34,7 @@ class WP_License_It_Product_Admin {
 
         add_meta_box(
             'wp_license_it_product_details',
-            __( 'License Details', 'wp-license-it' ),
+            __( 'License Details', 'wplicense-it' ),
             array( $this, 'wplit_render_details_metabox' ),
             'wplit_product',
             'side',
@@ -43,7 +43,7 @@ class WP_License_It_Product_Admin {
 
         add_meta_box(
             'wp_license_it_product_shortcode',
-            __( 'License Shortcode', 'wp-license-it' ),
+            __( 'License Shortcode', 'wplicense-it' ),
             array( $this, 'wplit_render_license_shortcode' ),
             'wplit_product',
             'side',
@@ -73,7 +73,7 @@ class WP_License_It_Product_Admin {
         <div>
             <p>
             <label for="wplit_product_price">
-            <h4> <?php _e( 'Product License Price (in USD)', 'wp-license-it' ); ?></h4>
+            <h4> <?php _e( 'Product License Price (in USD)', 'wplicense-it' ); ?></h4>
             <input type="number" step="0.01" id="wplit_product_price" name="wplit_product_price" value="<?php echo esc_attr( $wplit_product_price ); ?>" size="25" />
             </label> 
             </p>
@@ -81,11 +81,11 @@ class WP_License_It_Product_Admin {
         <hr/>
         <div>
             <input type="checkbox" id="wplit_expire" name="wplit_expire" value="yes" <?php echo (($wplit_expire=='yes') ? 'checked="checked"': ''); ?>>
-            <label for="wplit_expire"><?php esc_attr_e( 'Check if this License should expire', 'wp-license-it') ; ?></label><br>
+            <label for="wplit_expire"><?php esc_attr_e( 'Check if this License should expire', 'wplicense-it') ; ?></label><br>
         </div>
         <hr/>
         <div>
-            <div><?php _e( 'Select License Period', 'wp-license-it'); ?></div><br/>
+            <div><?php _e( 'Select License Period', 'wplicense-it'); ?></div><br/>
         <input type="radio" id="1-month wplit_expire_time" name="wplit_expire_time" <?php checked($wplit_expire_time, '1-month'); ?> value="1-month">
         <label for="html">1 Month (This License will expire 1 month after purchase.) </label><br>
         <input type="radio" id="1-year wplit_expire_time" name="wplit_expire_time" <?php checked($wplit_expire_time, '1-year'); ?> value="1-year">
@@ -127,42 +127,42 @@ class WP_License_It_Product_Admin {
         ?>
         <p>
             <label for="wplit_product_api_key">
-            <h4> <?php _e( 'Plugin/Theme API Key', 'wp-license-it' ); ?></h4>
+            <h4> <?php _e( 'Plugin/Theme API Key', 'wplicense-it' ); ?></h4>
             <input type="text" id="wplit_product_api_key" name="wplit_product_api_key" value="<?php echo esc_attr( $wplit_product_api_key ); ?>" size="25" />
             </label> 
         </p>
 
         <p>
             <label for="wplit_product_name">
-            <h4> <?php _e( 'Plugin/Theme Name', 'wp-license-it' ); ?></h4>
+            <h4> <?php _e( 'Plugin/Theme Name', 'wplicense-it' ); ?></h4>
             <input type="text" id="wplit_product_name" name="wplit_product_name" value="<?php echo esc_attr( $wplit_product_name ); ?>" size="25" />
             </label> 
         </p>
 
         <p>
             <label for="wplit_tested_wp_version">
-            <h4> <?php _e( 'Tested with WP Version', 'wp-license-it' ); ?></h4>
+            <h4> <?php _e( 'Tested with WP Version', 'wplicense-it' ); ?></h4>
             <input type="text" id="wplit_tested_wp_version" name="wplit_tested_wp_version" value="<?php echo esc_attr( $wplit_tested_wp_version ); ?>" size="25" />
             </label> 
         </p>
 
         <p>
             <label for="wplit_required_wp_version">
-            <h4> <?php _e( 'Required WP Version', 'wp-license-it' ); ?></h4>
+            <h4> <?php _e( 'Required WP Version', 'wplicense-it' ); ?></h4>
             <input type="text" id="wplit_required_wp_version" name="wplit_required_wp_version" value="<?php echo esc_attr( $wplit_required_wp_version ); ?>" size="25" />
             </label> 
         </p>
 
         <p>
             <label for="wplit_product_description">
-            <h4> <?php _e( 'Plugin/Theme Description', 'wp-license-it' ); ?></h4>
+            <h4> <?php _e( 'Plugin/Theme Description', 'wplicense-it' ); ?></h4>
             <input type="text" id="wplit_product_description" name="wplit_product_description" value="<?php echo esc_attr( $wplit_product_description ); ?>" size="25" />
             </label> 
         </p>
 
         <p>
             <label for="wplit_product_version">
-            <h4> <?php _e( 'Plugin/Theme Version', 'wp-license-it' ); ?></h4>
+            <h4> <?php _e( 'Plugin/Theme Version', 'wplicense-it' ); ?></h4>
             <input type="text" id="wplit_product_version" name="wplit_product_version" value="<?php echo esc_attr( $wplit_product_version ); ?>" size="25" />
             </label> 
         </p>

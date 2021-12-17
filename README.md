@@ -1,1 +1,1 @@
-# wp-license-it
+# wplicense-it

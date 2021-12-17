@@ -89,7 +89,7 @@ class WP_License_It_Admin_Settings {
 			<main class="content">
 				<div class="container-fluid p-0">
 
-					<h1 class="h3 mb-3"><?php _e('Settings', 'wp-license-it'); ?></h1>
+					<h1 class="h3 mb-3"><?php _e('Settings', 'wplicense-it'); ?></h1>
 
 					<div class="row">
 						<div class="col-md-3 col-xl-3">
@@ -101,13 +101,13 @@ class WP_License_It_Admin_Settings {
 
 								<div class="list-group list-group-flush" role="tablist">
                                 <a class="list-group-item list-group-item-action <?php echo $active_tab == 'wplit_settings' ? 'nav-tab-active' : ''; ?>" data-bs-toggle="list" href="?page=wplit-admin-settings&tab=wplit_settings&post_type=wplit_product" role="tab">
-									<?php _e('General', 'wp-license-it'); ?></a>
+									<?php _e('General', 'wplicense-it'); ?></a>
 
                                     <a class="list-group-item list-group-item-action <?php echo $active_tab == 'wplit_settings_pages' ? 'nav-tab-active' : ''; ?>" data-bs-toggle="list" href="?page=wplit-admin-settings&tab=wplit_settings_pages&post_type=wplit_product" role="tab">
-									<?php _e('Pages', 'wp-license-it'); ?></a>
+									<?php _e('Pages', 'wplicense-it'); ?></a>
 
                                     <a class="list-group-item list-group-item-action <?php echo $active_tab == 'wplit_settings_payment' ? 'nav-tab-active' : ''; ?>" data-bs-toggle="list" href="?page=wplit-admin-settings&tab=wplit_settings_payment&post_type=wplit_product" role="tab">
-									<?php _e('Payment', 'wp-license-it'); ?></a>
+									<?php _e('Payment', 'wplicense-it'); ?></a>
 
 								</div>
 							</div>
@@ -134,7 +134,7 @@ class WP_License_It_Admin_Settings {
         settings_fields( 'wplit-admin-settings' );
         do_settings_sections( 'wplit-admin-settings' ); ?>
         
-        <h3><?php _e('General Settings', 'wp-license-it'); ?></h3>
+        <h3><?php _e('General Settings', 'wplicense-it'); ?></h3>
 
         <?php
         } elseif( $active_tab == 'wplit_settings_pages' ) {
@@ -143,7 +143,7 @@ class WP_License_It_Admin_Settings {
             do_settings_sections( 'wplit-settings-pages' );
             ?>
 
-            <h3><?php _e('Pages', 'wp-license-it'); ?></h3>
+            <h3><?php _e('Pages', 'wplicense-it'); ?></h3>
             <table class="table">
 			<?php
 			 function devllo_post_exists_by_slug( $post_slug ) {
@@ -151,9 +151,9 @@ class WP_License_It_Admin_Settings {
 				return ( $loop_posts->have_posts() ? $loop_posts->posts[0] : false );
 			} ?>
 			<tr>
-			<th style="text-align: left;"><?php _e('Checkout Page', 'wp-license-it'); ?></th>
+			<th style="text-align: left;"><?php _e('Checkout Page', 'wplicense-it'); ?></th>
 			<td>
-			<em><?php _e('This page should include the shortcode', 'wp-license-it');?> [wplit-checkout]<br/></em>
+			<em><?php _e('This page should include the shortcode', 'wplicense-it');?> [wplit-checkout]<br/></em>
 			<?php   
 			wp_dropdown_pages( array( 
 				'name' => 'wplit-checkout-page', 
@@ -163,13 +163,13 @@ class WP_License_It_Admin_Settings {
 				));
 			?>
 			</td>
-			<td><a target="_blank" href="<?php echo esc_url( get_permalink(get_option('wplit-checkout-page')) ); ?>" class="button button-secondary"><?php _e('View Page', 'wp-license-it'); ?></a></td>
+			<td><a target="_blank" href="<?php echo esc_url( get_permalink(get_option('wplit-checkout-page')) ); ?>" class="button button-secondary"><?php _e('View Page', 'wplicense-it'); ?></a></td>
 			</tr>
 
 			<tr>
-			<th style="text-align: left;"><?php _e('License Page', 'wp-license-it'); ?></th>
+			<th style="text-align: left;"><?php _e('License Page', 'wplicense-it'); ?></th>
 			<td>
-			<em><?php _e('This page should include the shortcode', 'wp-license-it');?> [wplit-licenses]<br/></em>
+			<em><?php _e('This page should include the shortcode', 'wplicense-it');?> [wplit-licenses]<br/></em>
 			<?php   
 			wp_dropdown_pages( array( 
 				'name' => 'wplit-licenses-page', 
@@ -179,7 +179,7 @@ class WP_License_It_Admin_Settings {
 				));
 			?>
 			</td>
-			<td><a target="_blank" href="<?php echo esc_url( get_permalink(get_option('wplit-licenses-page')) ); ?>" class="button button-secondary"><?php _e('View Page', 'wp-license-it'); ?></a></td>
+			<td><a target="_blank" href="<?php echo esc_url( get_permalink(get_option('wplit-licenses-page')) ); ?>" class="button button-secondary"><?php _e('View Page', 'wplicense-it'); ?></a></td>
 			</tr>
 
 			</table>
@@ -192,15 +192,15 @@ class WP_License_It_Admin_Settings {
 			
             ?>
 
-        <h3><?php _e('Payment', 'wp-license-it'); ?></h3>
+        <h3><?php _e('Payment', 'wplicense-it'); ?></h3>
 
-        <h4><?php _e('Stripe API Settings', 'wp-license-it'); ?></h4>
+        <h4><?php _e('Stripe API Settings', 'wplicense-it'); ?></h4>
 
 		<table class="form-table">
 				<tbody>
 					<tr valign="top">	
 						<th scope="row" valign="top">
-							<?php _e('Test Mode?', 'wp-license-it'); ?>
+							<?php _e('Test Mode?', 'wplicense-it'); ?>
 						</th>
 						<td>
 							<input id="wplit-stripe-settings-test-mode" name="wplit-stripe-settings-test-mode" type="checkbox" value="1" <?php checked(1, get_option('wplit-stripe-settings-test-mode')); ?> />
@@ -210,52 +210,52 @@ class WP_License_It_Admin_Settings {
 				</tbody>
 			</table>	
  
-			<h3 class="title"><?php _e('API Keys', 'wp-license-it'); ?></h3>
+			<h3 class="title"><?php _e('API Keys', 'wplicense-it'); ?></h3>
 			<table class="form-table">
 				<tbody>
 					<tr valign="top">	
 						<th scope="row" valign="top">
-							<?php _e('Live Publishable Key', 'wp-license-it'); ?>
+							<?php _e('Live Publishable Key', 'wplicense-it'); ?>
 						</th>
 						<td>
 							<input id="wplit-stripe-settings-live-pk" name="wplit-stripe-settings-live-pk" type="text" class="regular-text" value="<?php echo get_option('wplit-stripe-settings-live-pk'); ?>"/>
-							<label class="description" for="wplit-stripe-settings-live-pk"><?php _e('Paste your live publishable key.', 'wp-license-it'); ?></label>
+							<label class="description" for="wplit-stripe-settings-live-pk"><?php _e('Paste your live publishable key.', 'wplicense-it'); ?></label>
 						</td>
 					</tr>
 
 					<tr valign="top">	
 						<th scope="row" valign="top">
-							<?php _e('Live Secret Key', 'wp-license-it'); ?>
+							<?php _e('Live Secret Key', 'wplicense-it'); ?>
 						</th>
 						<td>
 							<input id="wplit-stripe-settings-live-sk" name="wplit-stripe-settings-live-sk" type="password" class="regular-text" value="<?php echo get_option('wplit-stripe-settings-live-sk'); ?>"/>
-							<label class="description" for="wplit-stripe-settings-live-sk"><?php _e('Paste your live secret key.', 'wp-license-it'); ?></label>
+							<label class="description" for="wplit-stripe-settings-live-sk"><?php _e('Paste your live secret key.', 'wplicense-it'); ?></label>
 						</td>
 					</tr>
 				
 					<tr valign="top">	
 						<th scope="row" valign="top">
-							<?php _e('Test Publishable Key', 'wp-license-it'); ?>
+							<?php _e('Test Publishable Key', 'wplicense-it'); ?>
 						</th>
 						<td>
 							<input id="wplit-stripe-settings-test-pk" name="wplit-stripe-settings-test-pk" class="regular-text" type="text" value="<?php echo get_option('wplit-stripe-settings-test-pk'); ?>"/>
-							<label class="description" for="wplit-stripe-settings-test-pk"><?php _e('Paste your test publishable key.', 'wp-license-it'); ?></label>
+							<label class="description" for="wplit-stripe-settings-test-pk"><?php _e('Paste your test publishable key.', 'wplicense-it'); ?></label>
 						</td>
 					</tr>
 
 					<tr valign="top">	
 						<th scope="row" valign="top">
-							<?php _e('Test Secret Key', 'wp-license-it'); ?>
+							<?php _e('Test Secret Key', 'wplicense-it'); ?>
 						</th>
 						<td>
 							<input id="wplit-stripe-settings-test-sk" name="wplit-stripe-settings-test-sk" type="password" class="regular-text" value="<?php echo get_option('wplit-stripe-settings-test-sk'); ?>"/>
-							<label class="description" for="wplit-stripe-settings-test-sk"><?php _e('Paste your test secret key.', 'wp-license-it'); ?></label>
+							<label class="description" for="wplit-stripe-settings-test-sk"><?php _e('Paste your test secret key.', 'wplicense-it'); ?></label>
 						</td>
 					</tr>
 
 				<!--	<tr valign="top">	
 						<th scope="row" valign="top">
-							<?php// _e('Currency', 'wp-license-it'); ?>
+							<?php// _e('Currency', 'wplicense-it'); ?>
 						</th>
 						<td>
 						<?php // $options = get_option( 'wplit_payemnet_currency' ); ?>
@@ -265,7 +265,7 @@ class WP_License_It_Admin_Settings {
 
                 </option>
             </select>
-							<label class="description" for="wplit_payemnet_currency"><?php// _e('Paste your test secret key.', 'wp-license-it'); ?></label>
+							<label class="description" for="wplit_payemnet_currency"><?php// _e('Paste your test secret key.', 'wplicense-it'); ?></label>
 						</td>
 					</tr> -->
 				</tbody>
@@ -299,10 +299,10 @@ class WP_License_It_Admin_Settings {
 						<div class="col-6 text-end">
 							<ul class="list-inline">
 								<li class="list-inline-item">
-									<a class="text-muted" href="https://devlloplugins.com/support/"><?php esc_html_e('Support', 'wp-license-it'); ?></a>
+									<a class="text-muted" href="https://devlloplugins.com/support/"><?php esc_html_e('Support', 'wplicense-it'); ?></a>
 								</li>
 								<li class="list-inline-item">
-									<a class="text-muted" href="https://devlloplugins.com/documentations/events-by-devllo-documentation/"><?php esc_html_e('Help Center', 'wp-license-it'); ?></a>
+									<a class="text-muted" href="https://devlloplugins.com/documentations/events-by-devllo-documentation/"><?php esc_html_e('Help Center', 'wplicense-it'); ?></a>
 								</li>
                                 <!--
 								<li class="list-inline-item">

@@ -71,7 +71,7 @@ class WP_License_It_Admin_Dashboard {
 			<main class="content">
 				<div class="container-fluid p-0">
 
-					<h1 class="h3 mb-3"><?php _e('Dashboard', 'wp-license-it'); ?></h1>
+					<h1 class="h3 mb-3"><?php _e('Dashboard', 'wplicense-it'); ?></h1>
 
 					<div class="row">
 						<div class="col-md-3 col-xl-3">
@@ -83,10 +83,10 @@ class WP_License_It_Admin_Dashboard {
 
 								<div class="list-group list-group-flush" role="tablist">
                                 <a class="list-group-item list-group-item-action <?php echo $active_tab == 'wplit_settings' ? 'nav-tab-active' : ''; ?>" data-bs-toggle="list" href="?page=wplit-admin-dashboard&tab=wplit_admin&post_type=wplit_product" role="tab">
-								<?php _e('Dashboard', 'wp-license-it'); ?></a>
+								<?php _e('Dashboard', 'wplicense-it'); ?></a>
 
                                 <a class="list-group-item list-group-item-action <?php echo $active_tab == 'wplit_admin_licenses' ? 'nav-tab-active' : ''; ?>" data-bs-toggle="list" href="?page=wplit-admin-dashboard&tab=wplit_admin_licenses&post_type=wplit_product" role="tab">
-								<?php _e('Licenses', 'wp-license-it'); ?></a>
+								<?php _e('Licenses', 'wplicense-it'); ?></a>
 
 								</div>
 							</div>
@@ -132,23 +132,23 @@ class WP_License_It_Admin_Dashboard {
                                                                     ");
 
                                             ?>
-                                            <h3><?php _e('Stats', 'wp-license-it'); ?></h3>
+                                            <h3><?php _e('Stats', 'wplicense-it'); ?></h3>
 
                                             <div class="container">
 
                                                 <div class="row">
                                                     <div class="col-sm" > 
-                                                        <div><?php _e('Active Products', 'wp-license-it'); ?></div>
+                                                        <div><?php _e('Active Products', 'wplicense-it'); ?></div>
                                                         <div><?php print $count_products->publish; ?></div>
                                                     </div>
 
                                                     <div class="col-sm"> 
-                                                        <div><?php _e('Licenses Sold', 'wp-license-it'); ?></div>
+                                                        <div><?php _e('Licenses Sold', 'wplicense-it'); ?></div>
                                                         <div><?php print $count_licenses; ?></div>
                                                     </div>
 
                                                     <div class="col-sm"> 
-                                                        <div><?php _e('Active Licenses', 'wp-license-it'); ?></div>
+                                                        <div><?php _e('Active Licenses', 'wplicense-it'); ?></div>
                                                         <div><?php print $count_active_licenses; ?></div>
                                                     </div>
                                                 </div>
@@ -194,10 +194,10 @@ class WP_License_It_Admin_Dashboard {
                                                                 <thead>
 
                                                                     <tr>
-                                                                        <th> <?php esc_html_e('Product Name', 'wp-license-it'); ?> </th>
-                                                                        <th> <?php esc_html_e('License Email', 'wp-license-it'); ?> </th>
-                                                                        <th> <?php esc_html_e('License Key', 'wp-license-it'); ?> </th>
-                                                                        <th> <?php esc_html_e('License Status', 'wp-license-it'); ?> </th>
+                                                                        <th> <?php esc_html_e('Product Name', 'wplicense-it'); ?> </th>
+                                                                        <th> <?php esc_html_e('License Email', 'wplicense-it'); ?> </th>
+                                                                        <th> <?php esc_html_e('License Key', 'wplicense-it'); ?> </th>
+                                                                        <th> <?php esc_html_e('License Status', 'wplicense-it'); ?> </th>
                                                                     </tr>
                                                                 </thead>
                                                                 <?php

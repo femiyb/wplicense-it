@@ -25,7 +25,7 @@ function wplit_admin_sidebar (){
 <nav id="sidebar" class="sidebar">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="edit.php?post_type=wplit_product&page=wplit-admin-dashboard">
-          <span class="align-middle"><?php _e('WP License It', 'wp-license-it'); ?><span style="font-size: 10px;"> v1.0.0</span></span>
+          <span class="align-middle"><?php _e('WP License It', 'wplicense-it'); ?><span style="font-size: 10px;"> v1.0.0</span></span>
             </a>
 
 				<ul class="sidebar-nav">
@@ -43,11 +43,11 @@ function wplit_admin_sidebar (){
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="edit.php?post_type=wplit_product&page=wplit-admin-settings">
-              <i class="align-middle" data-feather="settings"></i> <span class="align-middle"><?php _e('Settings', 'wp-license-it'); ?></span>
+              <i class="align-middle" data-feather="settings"></i> <span class="align-middle"><?php _e('Settings', 'wplicense-it'); ?></span>
             </a>
 					</li>
 
-					<li class="sidebar-header"><?php esc_html_e('Add-Ons', 'wp-license-it'); ?>
+					<li class="sidebar-header"><?php esc_html_e('Add-Ons', 'wplicense-it'); ?>
 					</li>
 
 					<li class="sidebar-item">
@@ -65,12 +65,12 @@ function wplit_admin_sidebar (){
 
 				<div class="sidebar-cta">
 					<div class="sidebar-cta-content">
-						<strong class="d-inline-block mb-2"><?php esc_html_e('Premium Support', 'wp-license-it'); ?></strong>
+						<strong class="d-inline-block mb-2"><?php esc_html_e('Premium Support', 'wplicense-it'); ?></strong>
 						<div class="mb-3 text-sm">
-							<?php esc_html_e('Need help? Subscribe for Premium Support here.', 'wp-license-it'); ?>
+							<?php esc_html_e('Need help? Subscribe for Premium Support here.', 'wplicense-it'); ?>
 						</div>
 						<div class="d-grid">
-							<a href="https://wplicenseit.com/support/" target="_blank" class="btn btn-primary"><?php esc_html_e('Get Support', 'wp-license-it'); ?></a>
+							<a href="https://wplicenseit.com/support/" target="_blank" class="btn btn-primary"><?php esc_html_e('Get Support', 'wplicense-it'); ?></a>
 						</div>
 					</div>
 				</div>
