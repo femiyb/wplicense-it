@@ -51,13 +51,13 @@ function wplit_admin_sidebar (){
 					</li>
 
 					<li class="sidebar-item">
-					<!-- <a class="sidebar-link" href="edit.php?page=devllo-events-addons&tab=devllo_events_free_addons&post_type=devllo_event"> 
+					<!-- <a class="sidebar-link" href="edit.php?page=wplit-addons&tab=wplit_free_addons&post_type=devllo_event"> 
               <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Free Add-Ons</span>
             </a> -->
 					</li>
 
 					<li class="sidebar-item">
-					<!-- <a class="sidebar-link" href="edit.php?page=devllo-events-addons&tab=devllo_events_premium_addons&post_type=devllo_event"> 
+					<!-- <a class="sidebar-link" href="edit.php?page=wplit-addons&tab=wplit_premium_addons&post_type=devllo_event"> 
               <i class="align-middle" data-feather="check-circle"></i> <span class="align-middle">Premium Add-Ons</span>
             </a> -->
 					</li>

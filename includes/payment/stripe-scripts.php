@@ -1,6 +1,6 @@
 <?php
  
-function devllo_events_load_stripe_scripts() {
+function wplit_load_stripe_scripts() {
    wp_register_script( 'stripe-payment', WPLIT_INCLUDES_URI. 'payment/stripe-payment.js');	
 	global $stripe_options;
  
@@ -22,6 +22,6 @@ function devllo_events_load_stripe_scripts() {
 		)
 	);
 }
-add_action( 'init', 'devllo_events_load_stripe_scripts' );
+add_action( 'init', 'wplit_load_stripe_scripts' );
 ?>
 

@@ -204,7 +204,7 @@ class WP_License_It_Admin_Settings {
 						</th>
 						<td>
 							<input id="wplit-stripe-settings-test-mode" name="wplit-stripe-settings-test-mode" type="checkbox" value="1" <?php checked(1, get_option('wplit-stripe-settings-test-mode')); ?> />
-							<label class="description" for="wplit-stripe-settings-test-mode"><?php _e('Check this to switch Stripe to test mode.', 'devllo_events_stripe'); ?></label>
+							<label class="description" for="wplit-stripe-settings-test-mode"><?php _e('Check this to switch Stripe to test mode.', 'wplit_stripe'); ?></label>
 						</td>
 					</tr>
 				</tbody>

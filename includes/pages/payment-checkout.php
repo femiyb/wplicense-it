@@ -33,7 +33,7 @@ class WPLit_Payment_Function {
 
         if (isset($_COOKIE['wplit_product_id'] )){
 
-            $value = $_COOKIE['wplit_product_id']; 
+            $value = intval($_COOKIE['wplit_product_id']); 
 
             
             $wplit_product_price = get_post_meta( $value, 'wplit_product_price', true );
@@ -47,10 +47,10 @@ class WPLit_Payment_Function {
                 <ul class="list-group mb-3">
                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div>
-                    <h6 class="my-0"><?php echo $wplit_product_title; ?></h6>
-                    <small class="text-muted"><?php echo $wplit_product_description; ?></small>
+                    <h6 class="my-0"><?php echo esc_attr($wplit_product_title); ?></h6>
+                    <small class="text-muted"><?php echo esc_attr($wplit_product_description); ?></small>
                     </div>
-                    <span class="text-muted">$<?php echo $wplit_product_price; ?></span>
+                    <span class="text-muted">$<?php echo esc_attr($wplit_product_price); ?></span>
                 </li>
                 </ul>
 

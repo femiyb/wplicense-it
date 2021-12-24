@@ -17,7 +17,7 @@ class WP_License_It_Email {
 
         global $wp_locale;
         if (isset($_COOKIE['wplit_product_id'] )){
-            $product_id = $_COOKIE['wplit_product_id']; 
+            $product_id = intval($_COOKIE['wplit_product_id']); 
         }
 
         $product_name = get_the_title($product_id);
@@ -39,7 +39,7 @@ class WP_License_It_Email {
         $current_user = wp_get_current_user();
 
         if (isset($_COOKIE['wplit_product_id'] )){
-            $product_id = $_COOKIE['wplit_product_id']; 
+            $product_id = intval($_COOKIE['wplit_product_id']); 
         }
 
         $product_name = get_the_title($product_id);

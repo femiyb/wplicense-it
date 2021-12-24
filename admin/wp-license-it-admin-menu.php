@@ -39,7 +39,7 @@ class WP_License_It_Admin_Menu {
 		}
 		add_submenu_page( 'edit.php?post_type=wplit_product', __('Dashboard', ''), __('Dashboard', ''), 'manage_options', 'wplit-admin-dashboard', array( 'WP_License_It_Admin_Dashboard', 'wplit_dashboard_page'  )); 
         add_submenu_page( 'edit.php?post_type=wplit_product', __('Settings', ''), __('Settings', ''), 'manage_options', 'wplit-admin-settings', array( 'WP_License_It_Admin_Settings', 'wplit_settings_page'  )); 
-		// add_submenu_page( 'edit.php?post_type=wplit_product', __('Admin', ''), __('Admin', ''), 'manage_options', 'wplit-admin-page', array( 'WPLit_Admin_Page', 'devllo_events_settings_page'  )); 
+		// add_submenu_page( 'edit.php?post_type=wplit_product', __('Admin', ''), __('Admin', ''), 'manage_options', 'wplit-admin-page', array( 'WPLit_Admin_Page', 'wplit_settings_page'  )); 
 
 	}
 	

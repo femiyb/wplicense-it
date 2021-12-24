@@ -7,7 +7,7 @@ function stripe_process_payment() {
 	if(isset($_POST['action']) && $_POST['action'] == 'stripe' && wp_verify_nonce($_POST['stripe_nonce'], 'stripe-nonce')) {
  
         if (isset($_COOKIE['wplit_product_id'] )){
-            $product_id = $_COOKIE['wplit_product_id']; 
+            $product_id = intval($_COOKIE['wplit_product_id']); 
 
             global $stripe_options;
     
@@ -101,8 +101,11 @@ function stripe_process_payment() {
                 //	exit; 
                 } catch (Exception $e) {
                     // redirect on failed payment
+                    if(isset($_POST['redirect'])){
 
                     $redirect = add_query_arg('payment', 'failed', $_POST['redirect']);
+
+                    }
                 }
             }
     

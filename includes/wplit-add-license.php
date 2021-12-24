@@ -15,7 +15,7 @@ class WPLit_Add_License {
         $user_id = $user->ID;
 
         if (isset($_COOKIE['wplit_product_id'] )){
-        $product_id = $_COOKIE['wplit_product_id']; 
+        $product_id = intval($_COOKIE['wplit_product_id']); 
         }
         
         $today = date("Ymd");
