@@ -10,7 +10,8 @@ License: GPLv2 or later
 Plugin and Theme Licensing plugin
 
 == Description ==
- Sell and manage license keys for Plugins and Themes
+Sell and manage license keys for Plugins and Themes
 
 == Installation ==
-You can install directly from the Plugin Repository using the Plugins system in WordPress.
+The best number-one software license management solution for applications, for developers to properly and securely manage their application software licenses and controls, WPLicense It can help turn any business around and create an innovative forward thinking enterprise IT solution.
+

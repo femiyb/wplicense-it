@@ -13,7 +13,7 @@ class WP_License_It_Product_Post {
 	function wp_license_it_post_type() {
 		$labels = array(
 			'name'                  => _x( 'License It Products', 'Post Type General Name', 'wp_license_it' ),
-			'singular_name'         => _x( 'License Producta', 'Post Type Singular Name', 'wp_license_it' ),
+			'singular_name'         => _x( 'License Products', 'Post Type Singular Name', 'wp_license_it' ),
 			'menu_name'             => __( 'License Products', 'wp_license_it' ),
 			'name_admin_bar'        => __( 'License Product', 'wp_license_it' ),
 			'archives'              => __( 'Product Archives', 'wp_license_it' ),

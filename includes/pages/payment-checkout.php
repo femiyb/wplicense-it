@@ -19,6 +19,8 @@ class WPLit_Payment_Function {
 
         // wp_enqueue_script( 'jquery',  'http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js');
 
+        wp_enqueue_script('jquery');
+
         wp_enqueue_script( 'stripe',  'https://js.stripe.com/v3/');
         wp_enqueue_script( 'stripe-payment', WPLIT_INCLUDES_URI. 'payment/stripe-payment.js');	
         wp_enqueue_style( 'stripe-payment-css', WPLIT_INCLUDES_URI. 'payment/stripe-payment.css');	
