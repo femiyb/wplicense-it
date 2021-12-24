@@ -87,7 +87,7 @@ function stripe_process_payment() {
 
                         $url = get_permalink(get_option('wplit-licenses-page'));   
 
-                        $redirect = add_query_arg('payment', 'success', $url );
+                        $redirect = esc_url_raw(add_query_arg('payment', 'success', $url ));
 
                         do_action('wplit_after_stripe_checkout');
                     }else
@@ -101,11 +101,9 @@ function stripe_process_payment() {
                 //	exit; 
                 } catch (Exception $e) {
                     // redirect on failed payment
-                    if(isset($_POST['redirect'])){
 
-                    $redirect = add_query_arg('payment', 'failed', $_POST['redirect']);
+                    $redirect = esc_url_raw(add_query_arg('payment', 'failed', $_POST['redirect']));
 
-                    }
                 }
             }
     
