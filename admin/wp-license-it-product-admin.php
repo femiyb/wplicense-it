@@ -347,7 +347,7 @@ class WP_License_It_Product_Admin {
                 }
 
                 if (validate_file($_FILES['wplit_product_logo']['name'], $upload_file_type)){
-                $thefile = validate_file($_FILES['wplit_product_logo']['name']);
+                $thefile = $_FILES['wplit_product_logo']['name'];
                 }
 
                 if(sanitize_file_name($_FILES['wplit_product_logo']['tmp_name'])) {
