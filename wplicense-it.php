@@ -19,9 +19,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Current plugin version.
  */
-define( 'WP_LICENSE_IT_VERSION', '0.9.3' );
+define( 'WPLICENSE_IT_VERSION', '0.9.3' );
 
-class WP_License_It {
+if ( ! class_exists( 'WPLicense_It' ) ) {
+
+class WPLicense_It {
 
     private static $_instance = null;
     public $_session = null;
@@ -78,5 +80,6 @@ class WP_License_It {
     }
     
 }
+}
 
-new WP_License_It();
+new WPLicense_It();

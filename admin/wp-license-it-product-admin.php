@@ -171,7 +171,7 @@ class WP_License_It_Product_Admin {
             <label for="wplit_product_file_upload">
                 <h4>Upload Plugin/Theme File</h4>
                 <input type="file" id="wplit_product_file_upload" name="wplit_product_file_upload" value="" size="25" /> <br />
-                <?php if ($file_name) { echo 'File Name: ' . $file_name; }?>
+                <?php if ($file_name) { echo 'File Name: ' . esc_attr($file_name); }?>
             </label> 
         </p>
 
@@ -179,7 +179,7 @@ class WP_License_It_Product_Admin {
             <label for="wplit_product_logo">
                 <h4>Plugin/Theme Logo</h4>
                 <input type="file" id="wplit_product_logo" name="wplit_product_logo" value="" size="25" /> <br />
-                <?php if ($wplit_product_logo_url) { echo '<img src="'. $wplit_product_logo_url . '" style="width: 50px;">';} ?>
+                <?php if ($wplit_product_logo_url) { echo '<img src="'. esc_url($wplit_product_logo_url) . '" style="width: 50px;">';} ?>
             </label>
         </p>
 
@@ -187,7 +187,7 @@ class WP_License_It_Product_Admin {
             <label for="wplit_product_banner">
                 <h4>Plugin/Theme Banner</h4>
                 <input type="file" id="wplit_product_banner" name="wplit_product_banner" value="" size="25" /> <br />
-                <?php if ($wplit_product_banner_url) { echo '<img src="'. $wplit_product_banner_url . '" style="width: 200px;">';} ?>
+                <?php if ($wplit_product_banner_url) { echo '<img src="'. esc_url($wplit_product_banner_url) . '" style="width: 200px;">';} ?>
             </label>
         </p>
         <?php
@@ -347,7 +347,7 @@ class WP_License_It_Product_Admin {
                 }
 
                 if (validate_file($_FILES['wplit_product_logo']['name'], $upload_file_type)){
-                $thefile = $_FILES['wplit_product_logo']['name'];
+                $thefile = sanitize_file_name($_FILES['wplit_product_logo']['name']);
                 }
 
                 if(sanitize_file_name($_FILES['wplit_product_logo']['tmp_name'])) {
@@ -405,7 +405,7 @@ class WP_License_It_Product_Admin {
                 }
 
                 if (validate_file($_FILES['wplit_product_banner']['name'], $upload_file_type)){
-                $thefile = $_FILES['wplit_product_banner']['name'];
+                $thefile = sanitize_file_name($_FILES['wplit_product_banner']['name']);
                 }
 
                 if(sanitize_file_name($_FILES['wplit_product_banner']['tmp_name'])) {
@@ -465,7 +465,7 @@ class WP_License_It_Product_Admin {
                 $target_dir_location = $wp_files_directory_path;
 
                 if (validate_file( $_FILES['wplit_product_file_upload']['name'], $upload_file_type )){
-                $thefile = $_FILES['wplit_product_file_upload']['name'];
+                $thefile = sanitize_file_name($_FILES['wplit_product_file_upload']['name']);
                 }
 
                 if(sanitize_file_name($_FILES['wplit_product_file_upload']['tmp_name'])) {
