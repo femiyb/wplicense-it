@@ -1,0 +1,61 @@
+#wpbody-content > div.wrapper > div > main > div > div > div.col-md-3.col-xl-3 {
+    width: 100%;
+}
+#wpbody-content > div.wrapper > div > main > div > div > div.col-md-3.col-xl-3 > div > div.card-header {
+    display: none;
+}
+.list-group {
+    flex-direction: row;
+}
+#wpbody-content > div.wrapper > div > main > div > div > div.col-md-9.col-xl-9 {
+    width: 100%;
+}
+#wpbody-content > div.wrapper > div > main > div > div > div.col-md-3.col-xl-3 > div {
+    background-color: transparent;
+}
+#wpbody-content > div.wrapper > div > main > div > div > div.col-md-3.col-xl-3 > div > div.card-header {
+    background-color: transparent;
+}
+.list-group-item {
+    background-color: transparent;
+}
+.list-group-item:hover {
+    background-color: transparent;
+    color: #3b7ddd;
+}
+#wpbody-content > div.wrapper {
+    margin: 0 0 0 -20px;
+}
+
+#account > div > div.card-body > form > table:nth-child(9) > tbody > tr:nth-child(1) > td > label {
+    display: block;
+}
+#account > div > div.card-body > form > table:nth-child(9) > tbody > tr:nth-child(2) > td > label {
+    display: block;
+}
+#account > div > div.card-body > form > table:nth-child(9) > tbody > tr:nth-child(3) > td > label {
+    display: block;
+}
+#account > div > div.card-body > form > table:nth-child(9) > tbody > tr:nth-child(4) > td > label {
+    display: block;
+}
+#wpbody-content > div.wrapper > div > main {
+    background-color: #f3f6f9;
+}
+.list-group-item {
+    font-size: 15px;
+    font-weight: bold;
+}
+#wplit-stripe-settings-live-pk,
+#wplit-stripe-settings-live-sk,
+#wplit-stripe-settings-test-pk,
+#wplit-stripe-settings-test-sk {
+    padding: 3px;
+    border-width: 1px;
+    border-color: #CCCCCC;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-style: inset;
+    border-radius: 0;
+    box-shadow: -1px 0 5px rgba(66,66,66,.11);
+}
