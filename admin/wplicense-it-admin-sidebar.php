@@ -10,6 +10,8 @@ function enqueue_scripts() {
 	if ( isset( $my_current_screen->id ) && in_array( $my_current_screen->id, array( 'wplit_product_page_wplit-admin-dashboard', 'wplit_product_page_wplit-admin-settings' ) ) ) {
  
 	wp_enqueue_style( 'dashboard-css', WPLIT_ADMIN_URI. 'assets/dashboard.css');
+	wp_enqueue_style( 'style-css', WPLIT_ADMIN_URI. 'assets/style.css');
+
 
 	}
 
