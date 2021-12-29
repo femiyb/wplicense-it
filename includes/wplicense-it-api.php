@@ -203,7 +203,6 @@
         private function product_info( $product, $product_id, $email, $license_key, $product_api_key ) {
             // Collect all the metadata we have and return it to the caller
 
-            // $version = isset( $meta['version'] ) ? $meta['version'] : ''; 
             $version = get_post_meta( $product_id, 'wplit_product_version', true );
             $tested = get_post_meta( $product_id, 'wplit_tested_wp_version', true );
             $description = get_post_meta( $product_id, 'wplit_product_description', true );
@@ -229,31 +228,6 @@
         }
 
         /**
-         * The handler for the "get" request. Redirects to the file download.
-         *
-         * @param   $product    WP_Post     The product object
-         */
-        // private function get_product( $product, $product_id, $email, $license_key ) {
-        //     // Get the AWS data from post meta fields
-        //     $meta = get_post_meta( $product->ID, 'wp_license_manager_product_meta', true );
-        //     $bucket = isset ( $meta['file_bucket'] ) ? $meta['file_bucket'] : '';
-        //     $file_name = isset ( $meta['file_name'] ) ? $meta['file_name'] : '';
-
-        //     if ( $bucket == '' || $file_name == '' ) {
-        //         // No file set, return error
-        //         return $this->error_response( 'No download defined for product.' );
-        //     }
-
-        //     // Use the AWS API to set up the download
-        //     // This API method is called directly by WordPress so we need to adhere to its
-        //     // requirements and skip the JSON. WordPress expects to receive a ZIP file...
-
-        //     $s3_url = Wp_License_Manager_S3::get_s3_url( $bucket, $file_name );
-        //     wp_redirect( $s3_url, 302 );
-        // }
-
-
-            /**
          * The handler function that receives the API calls and passes them on to the
          * proper handlers.
          *
@@ -315,14 +289,8 @@
         }
 
         public static function get_product_file_url($product, $product_id, $email, $license_key, $product_api_key){
-            // $wplit_product_file = get_post_meta( $product_id, 'wplit_product_file_upload', true );
-            // print_r($wplit_product_file);
-            // $wplit_product_file_url = $wplit_product_file['url'];
-
-           // $file_dir_location = get_post_meta( $product_id, 'file_dir_location', true );
+         
             $file_dir_path = get_post_meta( $product_id, 'file_dir_path', true );
-
-
 
             $wpDir = ABSPATH; //Applications/MAMP/htdocs/abc/cdf/wordpress-2/
             $upload_base_dir = wp_upload_dir()['basedir']; //Applications/MAMP/htdocs/abc/cdf/wordpress-2/wp-content/uploads
@@ -343,13 +311,11 @@
                 readfile($filePath);
                 exit;
             }else{
-                      echo "File not found";
+                      echo "File not found.";
               }
 
         }
 
-    
-        
     }
 
     new Wp_License_It_API();
