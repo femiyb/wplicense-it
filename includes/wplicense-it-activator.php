@@ -63,6 +63,7 @@ class WP_License_It_Activator {
                 . "license_key varchar(48) NOT NULL, "
                 . "product_api_key varchar(48) NOT NULL, "
                 . "email varchar(48) NOT NULL, "
+                . "license_status varchar(48) NOT NULL"
                 . "valid_until datetime DEFAULT '0000-00-00 00:00:00' NOT NULL, "
                 . "created_at datetime DEFAULT '0000-00-00 00:00:00' NOT NULL, "
                 . "updated_at datetime DEFAULT '0000-00-00 00:00:00' NOT NULL, "

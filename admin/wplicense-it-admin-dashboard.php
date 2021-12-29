@@ -198,6 +198,7 @@ class WP_License_It_Admin_Dashboard {
                                                                         <th> <?php esc_html_e('License Email', 'wplicense-it'); ?> </th>
                                                                         <th> <?php esc_html_e('License Key', 'wplicense-it'); ?> </th>
                                                                         <th> <?php esc_html_e('License Status', 'wplicense-it'); ?> </th>
+                                                                        <?php do_action('wplit_admin_license_list_table_header'); ?>
                                                                     </tr>
                                                                 </thead>
                                                                 <?php
@@ -230,7 +231,8 @@ class WP_License_It_Admin_Dashboard {
                                                                             <td>'
                                                                                 . 
                                                                                 $license_status  .
-                                                                            '</td>
+                                                                            '</td>'
+                                                                            . do_action('wplit_admin_license_list_table_content') . '
                                                                         </tr> ';    
                                                                 }
                                                                 ?> </table> <?php

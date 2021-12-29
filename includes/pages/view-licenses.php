@@ -38,7 +38,7 @@ class WPLit_View_Licenses {
                             . $license_email .
                         '</div>
                         <div> Download Product: 
-                            <a href="/api/wp-license-it-api/v1/get?p=' . $product_id  .'&k=' . $product_api_key .'&e=' . $license_email .'&l=' . $license_key . '">Download</a>
+                            <a href="/api/wplicense-it-api/v1/get?p=' . $product_id  .'&k=' . $product_api_key .'&e=' . $license_email .'&l=' . $license_key . '">Download</a>
                         </div>
                     </div>';    
             }

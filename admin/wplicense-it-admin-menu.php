@@ -16,10 +16,10 @@ class WP_License_It_Admin_Menu {
     public function __construct() {
 		// admin menu
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
-		include('wp-license-it-admin-sidebar.php');
-		// include('wp-license-it-admin-page.php');
-		include( 'wp-license-it-admin-settings.php');
-		include( 'wp-license-it-admin-dashboard.php');
+		include('wplicense-it-admin-sidebar.php');
+		// include('wplicense-it-admin-page.php');
+		include( 'wplicense-it-admin-settings.php');
+		include( 'wplicense-it-admin-dashboard.php');
 
 
 		

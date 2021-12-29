@@ -64,33 +64,33 @@ class WPLit_Payment_Function {
                 <fieldset>
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label for="wplit_billing_user_first"><?php _e('First Name'); ?></label>
+                            <label for="wplit_billing_user_first"><?php _e('First Name', 'wplicense-it'); ?></label>
                             <input name="wplit_billing_user_first" id="wplit_billing_user_first" type="text" class="wplit_billing_user_first" required/>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="wplit_billing_user_last"><?php _e('Last Name'); ?></label>
+                            <label for="wplit_billing_user_last"><?php _e('Last Name', 'wplicense-it'); ?></label>
                             <input name="wplit_billing_user_last" id="wplit_billing_user_last" type="text" class="wplit_billing_user_last" required/>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="wplit_billing_company"><?php _e('Company'); ?></label>
+                        <label for="wplit_billing_company"><?php _e('Company', 'wplicense-it'); ?></label>
                         <div class="input-group">
                         <input name="wplit_billing_company" id="wplit_billing_company" type="text" class="wplit_billing_company form-control"/>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="wplit_billing_address"><?php _e('Address'); ?></label>
+                        <label for="wplit_billing_address"><?php _e('Address', 'wplicense-it'); ?></label>
                         <input name="wplit_billing_address" id="wplit_billing_address" type="text" class="wplit_billing_address form-control"/>
                     </div>
                     <div class="row">
                     <div class="col-md-6 mb-3">
-                            <label for="wplit_billing_state"><?php _e('State'); ?></label>
+                            <label for="wplit_billing_state"><?php _e('State', 'wplicense-it'); ?></label>
                             <div class="input-group">
                             <input name="wplit_billing_state" id="wplit_billing_state" type="text" class="wplit_billing_state"/>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="wplit_billing_city"><?php _e('City'); ?></label>
+                            <label for="wplit_billing_city"><?php _e('City', 'wplicense-it'); ?></label>
                             <div class="input-group">
                             <input name="wplit_billing_city" id="wplit_billing_city" type="text" class="wplit_billing_city"/>
                             </div>
@@ -98,18 +98,18 @@ class WPLit_Payment_Function {
                     </div>
                     <div class="row">
                     <div class="col-md-6 mb-3">
-                            <label for="wplit_billing_country"><?php _e('Country'); ?></label>
+                            <label for="wplit_billing_country"><?php _e('Country', 'wplicense-it'); ?></label>
                             <div class="input-group">
                             <input name="wplit_billing_countryl" id="wplit_billing_countryl" type="text" class="wplit_billing_countryl"/>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="wplit_billing_postal"><?php _e('Postal Code'); ?></label>
+                            <label for="wplit_billing_postal"><?php _e('Postal Code', 'wplicense-it'); ?></label>
                             <input name="wplit_billing_postal" id="wplit_billing_postal" type="text" class="wplit_billing_postal"/>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="wplit_billing_phone"><?php _e('Phone'); ?></label>
+                        <label for="wplit_billing_phone"><?php _e('Phone', 'wplicense-it'); ?></label>
                         <div class="input-group">
                         <input name="wplit_billing_phone" id="wplit_billing_phone" type="text" class="wplit_billing_phone"/>
                         </div>
@@ -145,7 +145,7 @@ class WPLit_Payment_Function {
 
         } else {
             ?>
-        <div class="error"> <?php esc_html_e('You have not selected any product to purchase.', 'wp-license-it'); ?> </div>
+        <div class="error"> <?php esc_html_e('You have not selected any product to purchase.', 'wplicense-it'); ?> </div>
          <?php
 
         }

@@ -85,13 +85,13 @@
          * The permalink structure definition for API calls.
          */
         public function add_api_endpoint_rules() {
-            add_rewrite_rule( 'api/wp-license-it-api/v1/(info|get|status)/?',
+            add_rewrite_rule( 'api/wplicense-it-api/v1/(info|get|status)/?',
                 'index.php?__wp_license_api=$matches[1]', 'top' );
 
             // If this was the first time, flush rules
-            if ( get_option( 'wp-license-it-api-rewrite-rules-version' ) != '0.9' ) {
+            if ( get_option( 'wplicense-it-api-rewrite-rules-version' ) != '0.9' ) {
                 flush_rewrite_rules();
-                update_option( 'wp-license-it-api-rewrite-rules-version', '0.9' );
+                update_option( 'wplicense-it-api-rewrite-rules-version', '0.9' );
             }  
         }
 
@@ -202,21 +202,17 @@
          */
         private function product_info( $product, $product_id, $email, $license_key, $product_api_key ) {
             // Collect all the metadata we have and return it to the caller
-            //$meta = get_post_meta( $product->ID, 'wp_license_manager_product_meta', true );
 
             // $version = isset( $meta['version'] ) ? $meta['version'] : ''; 
             $version = get_post_meta( $product_id, 'wplit_product_version', true );
             $tested = get_post_meta( $product_id, 'wplit_tested_wp_version', true );
             $description = get_post_meta( $product_id, 'wplit_product_description', true );
-
-
-
-       
-            // $tested = isset( $meta['tested'] ) ? $meta['tested'] : '';
+    
             // $last_updated = isset( $meta['updated'] ) ? $meta['updated'] : '';
             // $author = isset( $meta['author'] ) ? $meta['author'] : '';
-            // $banner_low = isset( $meta['banner_low'] ) ? $meta['banner_low'] : '';
-            // $banner_high = isset( $meta['banner_high'] ) ? $meta['banner_high'] : '';
+
+            $wplit_product_banner_url = get_post_meta( $product_id, 'wplit_product_banner_url', true );
+            $wplit_product_logo_url = get_post_meta( $product_id, 'wplit_product_logo_url', true );
 
             return array(
                 'name' => $product->post_title,
@@ -225,9 +221,9 @@
                 'tested' => $tested,
                 //'author' => $author,
                // 'last_updated' => $last_updated,
-               // 'banner_low' => $banner_low,
-               // 'banner_high' => $banner_high,
-                "package_url" => home_url( '/api/wp-license-it-api/v1/get?p=' . $product_id . '&k=' . urlencode( $product_api_key ) . '&e=' . $email . '&l=' . urlencode( $license_key ) ),
+               'banner_low' => $wplit_product_logo_url,
+               'banner_high' => $wplit_product_banner_url,
+                "package_url" => home_url( '/api/wplicense-it-api/v1/get?p=' . $product_id . '&k=' . urlencode( $product_api_key ) . '&e=' . $email . '&l=' . urlencode( $license_key ) ),
                 // "description_url" => get_permalink( $product->ID ) . '#v=' . $version
             );
         }
@@ -333,15 +329,6 @@
           // $filePath = $upload_base_dir . 
             $filePath = $upload_base_dir . '/' . $file_dir_path; 
 
-
-            // header('Content-Description: File Transfer');
-            // header('Content-Type: application/octet-stream');
-            // header("Cache-Control: no-cache, must-revalidate");
-            // header("Expires: 0");
-            // header('Content-Disposition: attachment; filename="'.basename($filePath).'"');
-            // header('Content-Length: ' . filesize($filePath));
-            // header('Pragma: public');
-            
             if (file_exists($filePath)) {
                 header('Content-type: application/zip');
                 header('Content-Description: File Transfer');
@@ -358,22 +345,6 @@
             }else{
                       echo "File not found";
               }
-
-
-            // header('Pragma: public');
-            // header('Expires: 0');
-            // header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-            // header('Cache-Control: private', false);
-            // header('Content-Disposition: attachment; filename="'.basename($filePath).'"');
-            // header("Content-Type: application/octet-stream");
-            // header('Content-Transfer-Encoding: binary');
-            // readfile($filePath);
-            
-            // print $filePath;
-            // die;
-
-            // wp_redirect($file_dir_location, 302);
-            //print_r($wplit_product_file);
 
         }
 

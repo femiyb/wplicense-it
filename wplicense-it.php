@@ -40,14 +40,14 @@ class WPLicense_It {
         $this->init_hooks();
 
         // Admin Files
-        include( 'admin/wp-license-it-product-admin.php');
-        include( 'admin/wp-license-it-product-post.php'); 
-        include( 'admin/wp-license-it-admin-menu.php'); 
+        include( 'admin/wplicense-it-product-admin.php');
+        include( 'admin/wplicense-it-product-post.php'); 
+        include( 'admin/wplicense-it-admin-menu.php'); 
 
         // Include Files
-        include( 'includes/wp-license-it-protect-file.php'); 
-        include( 'includes/wp-license-it-activator.php');
-        include( 'includes/wp-license-it-api.php'); 
+        include( 'includes/wplicense-it-protect-file.php'); 
+        include( 'includes/wplicense-it-activator.php');
+        include( 'includes/wplicense-it-api.php'); 
 
         // Pages Files
         include( 'includes/pages/wplit-render-product.php'); 
@@ -55,7 +55,7 @@ class WPLicense_It {
         include( 'includes/pages/payment-checkout.php'); 
 
         // Email
-        include( 'includes/emails/wp-license-it-email.php'); 
+        include( 'includes/emails/wplicense-it-email.php'); 
 
     }
 

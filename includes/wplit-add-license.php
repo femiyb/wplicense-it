@@ -6,6 +6,7 @@ class WPLit_Add_License {
 
     }
 
+    // Add Order to Database
     function wplit_add_order(){
 
         global $wpdb;
@@ -88,6 +89,7 @@ class WPLit_Add_License {
         );
     }
 
+    // Add License to Databse
     function wplit_add_license() {
 
         if (isset($_COOKIE['wplit_product_id'] )){
@@ -138,6 +140,7 @@ class WPLit_Add_License {
                     'email' => $email,
                     'license_key' => $license_key,
                     'product_api_key' => $product_api_key,
+                    'license_status' => 'active',
                     'valid_until' => $valid_until,
                     'created_at' => current_time( 'mysql' ),
                     'updated_at' => current_time( 'mysql' )
@@ -145,6 +148,7 @@ class WPLit_Add_License {
                 array(
                     '%d',
                     '%d',
+                    '%s',
                     '%s',
                     '%s',
                     '%s',

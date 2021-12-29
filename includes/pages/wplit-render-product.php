@@ -46,7 +46,8 @@ class WPLit_Render_Product {
 
         if ($wplit_product_api_key){
     
-            $output = '
+            $output = do_action('wplit_before_render_product'). '
+            
             <div class="col-md-6">
                 <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div class="col-auto d-none d-lg-block">
@@ -67,16 +68,15 @@ class WPLit_Render_Product {
                    
                 </div>
             </div>';
+            
             do_action('wplit-notices');
             
             return $output;
         }
 
-
     }
 
-
-
+    // Set Cookie for Product ID
     public function set_cookie() {
         if(isset($_POST['add-license'])) {
             $product_id = intval( $_POST['id'] );
@@ -111,9 +111,7 @@ class WPLit_Render_Product {
             $product_id = intval( $_POST['id'] );
 
             // Is User logged in
-            if ( is_user_logged_in() ) {
-
-                
+            if ( is_user_logged_in() ) {         
                 $id = $wpdb->get_var(
                     $wpdb->prepare(
                         "SELECT id FROM " . $wpdb->prefix . "wplit_product_licenses 
