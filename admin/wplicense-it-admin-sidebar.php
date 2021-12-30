@@ -12,7 +12,6 @@ function enqueue_scripts() {
 	wp_enqueue_style( 'dashboard-css', WPLIT_ADMIN_URI. 'assets/dashboard.css');
 	wp_enqueue_style( 'style-css', WPLIT_ADMIN_URI. 'assets/style.css');
 
-
 	}
 
 }
