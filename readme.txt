@@ -31,3 +31,18 @@ Open up your WordPress Dashboard and navigate to the Plugins page.
 Click on Add new
 In the search bar type “WPLicense It”
 Select this plugin and click on Install now
+
+== Screenshots ==
+
+
+
+== Frequently Asked Questions ==
+
+= I found a bug in the plugin. =
+Please post it in the [WordPress support forum](https://wordpress.org/support/plugin/wplicense-it/) and we'll look into it as soosn as possible.
+
+
+
+== Changelog ==
+= 1.0 =
+Initial release.

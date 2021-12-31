@@ -71,7 +71,7 @@ function wplit_admin_sidebar (){
 							<?php esc_html_e('Need help? Subscribe for Premium Support here.', 'wplicense-it'); ?>
 						</div>
 						<div class="d-grid">
-							<a href="https://wplicenseit.com/support/" target="_blank" class="btn btn-primary"><?php esc_html_e('Get Support', 'wplicense-it'); ?></a>
+							<a href="https://wordpress.org/support/plugin/wplicense-it/" target="_blank" class="btn btn-primary"><?php esc_html_e('Get Support', 'wplicense-it'); ?></a>
 						</div>
 					</div>
 				</div>
