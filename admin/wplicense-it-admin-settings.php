@@ -255,7 +255,7 @@ class WP_License_It_Admin_Settings {
 
 				<!--	<tr valign="top">	
 						<th scope="row" valign="top">
-							<?php// _e('Currency', 'wplicense-it'); ?>
+							 _e('Currency', 'wplicense-it');
 						</th>
 						<td>
 						<?php // $options = get_option( 'wplit_payemnet_currency' ); ?>
@@ -265,7 +265,7 @@ class WP_License_It_Admin_Settings {
 
                 </option>
             </select>
-							<label class="description" for="wplit_payemnet_currency"><?php// _e('Paste your test secret key.', 'wplicense-it'); ?></label>
+							<label class="description" for="wplit_payemnet_currency"> // _e('Paste your test secret key.', 'wplicense-it'); </label>
 						</td>
 					</tr> -->
 				</tbody>

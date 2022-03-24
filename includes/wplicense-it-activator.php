@@ -14,7 +14,7 @@ class WP_License_It_Activator {
 
         $current_wplit_db_version = get_option('wplit_db_version');
         if ( !$current_wplit_db_version ) {
-            $current_wplit_db_version = 0;
+            $current_wplit_db_version = $wplit_db_version;
         }
 
         if (intval($current_wplit_db_version) < $wplit_db_version) {
@@ -63,10 +63,10 @@ class WP_License_It_Activator {
                 . "license_key varchar(48) NOT NULL, "
                 . "product_api_key varchar(48) NOT NULL, "
                 . "email varchar(48) NOT NULL, "
-                . "license_status varchar(48) NOT NULL"
-                . "valid_until datetime DEFAULT '0000-00-00 00:00:00' NOT NULL, "
-                . "created_at datetime DEFAULT '0000-00-00 00:00:00' NOT NULL, "
-                . "updated_at datetime DEFAULT '0000-00-00 00:00:00' NOT NULL, "
+                . "license_status varchar(48) NOT NULL, "
+                . "valid_until DATETIME DEFAULT '0000-00-00 00:00:00' NOT NULL, "
+                . "created_at DATETIME DEFAULT '0000-00-00 00:00:00' NOT NULL, "
+                . "updated_at DATETIME DEFAULT '0000-00-00 00:00:00' NOT NULL, "
                 . "UNIQUE KEY id (id)" . ")" . $charset_collate. ";";
 
         $ordertable = "CREATE TABLE " . $order_table_name . "("
